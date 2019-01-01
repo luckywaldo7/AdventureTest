@@ -18,6 +18,14 @@ _global_script_class_icons={
 config/name="Adventure Test"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=640
+window/size/height=360
+window/size/resizable=false
+window/size/fullscreen=true
+window/stretch/mode="viewport"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
