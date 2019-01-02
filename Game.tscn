@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Tiles/grass1.png" type="Texture" id=1]
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Character.png" type="Texture" id=3]
+[ext_resource path="res://Masks/Light256.png" type="Texture" id=4]
 
 [sub_resource type="TileSet" id=1]
 
@@ -43,9 +44,14 @@ tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="KinematicBody2D"]
+position = Vector2( -0.790558, -25.5615 )
 texture = ExtResource( 3 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D"]
-position = Vector2( -0.788895, 23.8247 )
+position = Vector2( 0.00167811, 0.107887 )
 shape = SubResource( 2 )
+
+[node name="Light2D" type="Light2D" parent="KinematicBody2D"]
+texture = ExtResource( 4 )
+mode = 3
 
