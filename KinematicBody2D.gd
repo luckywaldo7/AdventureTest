@@ -3,7 +3,7 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-const SPEED = 70
+const SPEED = 100
 var movedir = Vector2(0,0)
 
 func controls_loop():
@@ -19,6 +19,7 @@ func movement_loop():
 	var motion = movedir.normalized() * SPEED
 	move_and_slide(motion, Vector2(0,0))
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	controls_loop()
 	movement_loop()
@@ -27,6 +28,4 @@ func _physics_process(delta):
 func _ready():
 	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+
