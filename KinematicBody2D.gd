@@ -4,7 +4,6 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 const SPEED = 100
-var movedir = Vector2(0,0)
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
@@ -14,10 +13,6 @@ func controls_loop():
 	
 	movedir.x = -int(LEFT) + int(RIGHT)
 	movedir.y = -int(UP) + int(DOWN)
-
-func movement_loop():
-	var motion = movedir.normalized() * SPEED
-	move_and_slide(motion, Vector2(0,0))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
