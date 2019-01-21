@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Tiles/grass1.png" type="Texture" id=1]
 [ext_resource path="res://Tiles/stones1.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/Character.png" type="Texture" id=6]
 [ext_resource path="res://Masks/Light256.png" type="Texture" id=7]
+[ext_resource path="res://Lighting/GlobalScreenLighting.png" type="Texture" id=8]
+[ext_resource path="res://Objects/Tree.png" type="Texture" id=9]
 
 [sub_resource type="TileSet" id=1]
 
@@ -56,6 +58,10 @@
 
 extents = Vector2( 16.1029, 3.54641 )
 
+[sub_resource type="OccluderPolygon2D" id=3]
+
+polygon = PoolVector2Array( -6.78558, -4.23587, 8.12054, -4.78795, 11.8011, 1.837, -9.91403, 2.5731 )
+
 [node name="Node2D" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -76,9 +82,35 @@ position = Vector2( 0.00167811, 0.107887 )
 shape = SubResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="KinematicBody2D"]
+visible = false
 texture = ExtResource( 7 )
-mode = 3
+texture_scale = 2.0
+energy = 0.8
+range_height = 40.0
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_filter = 3
+shadow_filter_smooth = 30.0
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+
+[node name="Light2D2" type="Light2D" parent="KinematicBody2D/Camera2D"]
+position = Vector2( 0.471085, 1.24595 )
+texture = ExtResource( 8 )
+color = Color( 0.976471, 1, 0.192157, 1 )
+energy = 0.7
+range_height = 47.3
+shadow_enabled = true
+shadow_color = Color( 0, 0, 0, 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 106.555, 50.3782 )
+texture = ExtResource( 9 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite"]
+position = Vector2( 0, 12.7599 )
+occluder = SubResource( 3 )
 
