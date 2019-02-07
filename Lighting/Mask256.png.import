@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Light128.png-300f7b3c1d0103ba52c90c13ee7f00d5.stex"
+path="res://.import/Mask256.png-291d7de1ceb13e57b521c1e150f232c9.stex"
 
 [deps]
 
-source_file="res://Masks/Light128.png"
-dest_files=[ "res://.import/Light128.png-300f7b3c1d0103ba52c90c13ee7f00d5.stex" ]
+source_file="res://Lighting/Mask256.png"
+dest_files=[ "res://.import/Mask256.png-291d7de1ceb13e57b521c1e150f232c9.stex" ]
 
 [params]
 

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Lighting/Light256.png" type="Texture" id=1]
+[ext_resource path="res://Effects/SunRotation.gd" type="Script" id=2]
+
+[node name="daynight_cycle" type="Node2D"]
+
+[node name="IlluminationHigh" type="Light2D" parent="."]
+texture = ExtResource( 1 )
+texture_scale = 50.0
+range_height = 100.0
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="IlluminationHigh"]
+
+[node name="IlluminationLow" type="Light2D" parent="."]
+texture = ExtResource( 1 )
+texture_scale = 50.0
+range_height = 30.0
+
+[node name="Shadow" type="Light2D" parent="."]
+texture = ExtResource( 1 )
+texture_scale = 50.0
+range_height = 30.0
+
