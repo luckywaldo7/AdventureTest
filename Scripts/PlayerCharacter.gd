@@ -1,12 +1,10 @@
 extends "res://Scripts/entity.gd"
 
-const SPEED = 150
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	controls_loop()
 	movement_loop()
-	spritedir_loop()
+	#spritedir_loop()
 
 func controls_loop():
 	var LEFT = Input.is_action_pressed("ui_left")
